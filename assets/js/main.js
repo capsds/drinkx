@@ -352,11 +352,17 @@ var settings = {
 
     document.body.appendChild(mensaje);
   });
+		
 
-  document.addEventListener("DOMContentLoaded", function () {
+
+	
+	
+	
+	
+	document.addEventListener("DOMContentLoaded", function () {
     // Verificar si el usuario ya aceptó la edad en esta sesión
     if (sessionStorage.getItem("edadConfirmada") === "true") {
-      return;
+        return;
     }
 
     // Deshabilitar la interacción con la página
@@ -365,69 +371,78 @@ var settings = {
 
     // Crear el fondo del popup
     let overlay = document.createElement("div");
-    overlay.style.position = "fixed";
-    overlay.style.top = "0";
-    overlay.style.left = "0";
-    overlay.style.width = "100vw";
-    overlay.style.height = "100vh";
-    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-    overlay.style.display = "flex";
-    overlay.style.justifyContent = "center";
-    overlay.style.alignItems = "center";
-    overlay.style.zIndex = "1000";
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    `;
 
     // Crear el popup
     let popup = document.createElement("div");
-    popup.style.backgroundColor = "#fff";
-    popup.style.padding = "20px";
-    popup.style.borderRadius = "10px";
-    popup.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.3)";
-    popup.style.textAlign = "center";
-    popup.style.maxWidth = "300px";
-    popup.style.pointerEvents = "auto"; // Permitir interacción solo en el popup
+    popup.style.cssText = `
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        max-width: 320px;
+        pointer-events: auto;
+    `;
 
-    // Agregar logo
+    // Crear la imagen del logo (URL funcional)
     let logo = document.createElement("img");
-    logo.src = "images/logo_6.jpg"; // Asegúrate de que la ruta es correcta
-    logo.style.width = "200px";
-    logo.style.marginBottom = "10px";
+    logo.src = "https://static.vecteezy.com/system/resources/previews/005/001/661/non_2x/under-18-forbidden-round-icon-sign-illustration-eighteen-or-older-persons-adult-content-18-plus-only-rating-isolated-on-white-background-vector.jpg";
+    logo.alt = "Logo";
+    logo.style.cssText = "max-width: 100px; margin-bottom: 15px;";
 
     // Contenido del popup
     let message = document.createElement("p");
     message.textContent = "¿Eres mayor de 18 años?";
-    message.style.fontSize = "18px";
-    message.style.marginBottom = "15px";
+    message.style.cssText = "font-size: 18px; margin-bottom: 15px;";
 
+    // Botón "Sí"
     let btnYes = document.createElement("button");
     btnYes.textContent = "Sí";
-    btnYes.style.margin = "5px";
-    btnYes.style.padding = "10px 20px";
-    btnYes.style.border = "none";
-    btnYes.style.borderRadius = "5px";
-    btnYes.style.backgroundColor = "green";
-    btnYes.style.color = "white";
-    btnYes.style.cursor = "pointer";
-
-    let btnNo = document.createElement("button");
-    btnNo.textContent = "No";
-    btnNo.style.margin = "5px";
-    btnNo.style.padding = "10px 20px";
-    btnNo.style.border = "none";
-    btnNo.style.borderRadius = "5px";
-    btnNo.style.backgroundColor = "red";
-    btnNo.style.color = "white";
-    btnNo.style.cursor = "pointer";
-
-    // Eventos de los botones
+    btnYes.style.cssText = `
+        margin: 5px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: green;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+    `;
     btnYes.addEventListener("click", function () {
-      sessionStorage.setItem("edadConfirmada", "true"); // Se almacena solo en la sesión actual
-      document.body.style.overflow = "auto";
-      document.body.style.pointerEvents = "auto";
-      location.reload();
+        sessionStorage.setItem("edadConfirmada", "true");
+        
+        // Opciones para forzar la recarga
+        window.location.href = window.location.href; // Redirigir a la misma página
+        // window.location.reload(true); // También puedes probar con esto para forzar recarga desde el servidor
     });
 
+    // Botón "No"
+    let btnNo = document.createElement("button");
+    btnNo.textContent = "No";
+    btnNo.style.cssText = `
+        margin: 5px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+    `;
     btnNo.addEventListener("click", function () {
-      window.history.back();
+        window.location.href = "https://google.com";
     });
 
     // Agregar elementos al popup
@@ -439,5 +454,10 @@ var settings = {
 
     // Agregar popup al body
     document.body.appendChild(overlay);
-  });
+});
+
+	
+
+
+
 })(jQuery);

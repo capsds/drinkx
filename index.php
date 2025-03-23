@@ -3,7 +3,7 @@
 <!-- Slide -->
 <section class="banner full">
     <article>
-        <img src="<?php echo get_template_directory_uri(); ?>/images/slide01.png" alt="Pack de licores DrinkX" width="1440" height="961">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/slide01.webp" alt="Pack de licores DrinkX" width="1440" height="961">
         <div class="inner">
             <header>
                 <p>Disfruta los mejores packs de licores en Hogares, Ciudad Verde y Soacha Centro</p>
@@ -12,7 +12,7 @@
         </div>
     </article>
     <article>
-        <img src="<?php echo get_template_directory_uri(); ?>/images/slide02.jpg" alt="Servicio a domicilio en Soacha" width="1440" height="961">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/slide02.webp" alt="Servicio a domicilio en Soacha" width="1440" height="961">
         <div class="inner">
             <header>
                 <p>Entrega a domicilio en Soacha Centro, Hogares y Ciudad Verde. ¡Haz tu pedido ahora!</p>
@@ -21,7 +21,7 @@
         </div>
     </article>
     <article>
-        <img src="<?php echo get_template_directory_uri(); ?>/images/slide03.jpg" alt="Brinda con tus amigos" width="1440" height="961">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/slide03.webp" alt="Brinda con tus amigos" width="1440" height="961">
         <div class="inner">
             <header>
                 <p>Tenemos combos listos para cualquier ocasión</p>
@@ -39,7 +39,7 @@
         </div>
     </article>
     <article>
-        <img src="<?php echo get_template_directory_uri(); ?>/images/slide05.jpg" alt="Compra fácil y rápida" width="1440" height="961">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/slide05.webp" alt="Compra fácil y rápida" width="1440" height="961">
         <div class="inner">
             <header>
                 <p>Pide por WhatsApp y te lo llevamos a casa</p>
@@ -61,14 +61,14 @@
 
             <?php
             $packs = [
-                ["img" => "pic01.jpg", "pack" => "Pack 01", "title" => "Combo Superior"],
-                ["img" => "pic02.jpg", "pack" => "Pack 02", "title" => "Combo Bonito"],
-                ["img" => "pic03.jpg", "pack" => "Pack 03", "title" => "Combo Lindo"],
-                ["img" => "pic03.jpg", "pack" => "Pack 04", "title" => "Combo Lindo"],
-                ["img" => "pic03.jpg", "pack" => "Pack 05", "title" => "Combo Lindo"],
-                ["img" => "pic03.jpg", "pack" => "Pack 06", "title" => "Combo Lindo"],
-                ["img" => "pic03.jpg", "pack" => "Pack 07", "title" => "Combo Lindo"],
-                ["img" => "pic03.jpg", "pack" => "Pack 08", "title" => "Combo Lindo"],
+                ["img" => "pic01.webp", "pack" => "Pack 01", "title" => "Combo Superior"],
+                ["img" => "pic02.webp", "pack" => "Pack 02", "title" => "Combo Bonito"],
+                ["img" => "pic03.webp", "pack" => "Pack 03", "title" => "Combo Lindo"],
+                ["img" => "pic03.webp", "pack" => "Pack 04", "title" => "Combo Lindo"],
+                ["img" => "pic03.webp", "pack" => "Pack 05", "title" => "Combo Lindo"],
+                ["img" => "pic03.webp", "pack" => "Pack 06", "title" => "Combo Lindo"],
+                ["img" => "pic03.webp", "pack" => "Pack 07", "title" => "Combo Lindo"],
+                ["img" => "pic03.webp", "pack" => "Pack 08", "title" => "Combo Lindo"],
             ];
 
             foreach ($packs as $pack) : ?>
